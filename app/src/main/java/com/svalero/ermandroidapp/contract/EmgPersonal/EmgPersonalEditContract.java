@@ -1,4 +1,4 @@
-package com.svalero.ermandroidapp.contract;
+package com.svalero.ermandroidapp.contract.EmgPersonal;
 
 import com.svalero.ermandroidapp.domain.EmgPersonal;
 

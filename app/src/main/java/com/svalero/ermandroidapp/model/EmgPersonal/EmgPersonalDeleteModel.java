@@ -1,10 +1,8 @@
-package com.svalero.ermandroidapp.model;
+package com.svalero.ermandroidapp.model.EmgPersonal;
 
 import com.svalero.ermandroidapp.api.ERMApi;
 import com.svalero.ermandroidapp.api.ERMApiInterface;
-import com.svalero.ermandroidapp.contract.EmgPersonalAddContract;
-import com.svalero.ermandroidapp.contract.EmgPersonalDeleteContract;
-import com.svalero.ermandroidapp.domain.EmgPersonal;
+import com.svalero.ermandroidapp.contract.EmgPersonal.EmgPersonalDeleteContract;
 
 import retrofit2.Call;
 import retrofit2.Callback;

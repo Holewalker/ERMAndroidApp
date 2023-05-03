@@ -1,8 +1,8 @@
-package com.svalero.ermandroidapp.model;
+package com.svalero.ermandroidapp.model.EmgPersonal;
 
 import com.svalero.ermandroidapp.api.ERMApi;
 import com.svalero.ermandroidapp.api.ERMApiInterface;
-import com.svalero.ermandroidapp.contract.EmgPersonalListContract;
+import com.svalero.ermandroidapp.contract.EmgPersonal.EmgPersonalListContract;
 import com.svalero.ermandroidapp.domain.EmgPersonal;
 
 import java.util.List;
