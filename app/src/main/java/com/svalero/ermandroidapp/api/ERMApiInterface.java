@@ -6,7 +6,6 @@ import com.svalero.ermandroidapp.domain.EmgVehicle;
 
 import java.util.List;
 
-import lombok.experimental.Delegate;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
