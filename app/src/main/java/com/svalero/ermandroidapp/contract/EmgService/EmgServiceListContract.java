@@ -22,10 +22,13 @@ public interface EmgServiceListContract {
 
     interface View {
 
+        void showEmgServiceList(List<EmgService> emgServiceList);
 
+        void showMessage(String message);
     }
 
     interface Presenter {
 
+        void loadAllEmgService();
     }
 }

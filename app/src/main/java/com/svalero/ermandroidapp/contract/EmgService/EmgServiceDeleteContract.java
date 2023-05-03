@@ -18,6 +18,9 @@ public interface EmgServiceDeleteContract {
     interface View {
 
 
+        void showError(String errorMessage);
+
+        void showMessage(String message);
     }
 
     interface Presenter {

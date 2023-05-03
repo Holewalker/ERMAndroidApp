@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="emgService_location" type="id" />
+    <item name="emgService_type" type="id" />
+    <item name="see_details_button" type="id" />
+    <item name="delete_emgService_button" type="id" />
+    <item name="task_list" type="id" />
+</resources>
