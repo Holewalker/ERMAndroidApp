@@ -16,7 +16,7 @@ import retrofit2.http.Path;
 
 public interface ERMApiInterface {
     //EMG VEHICLE API CALLS
-    @GET("EmergencyVehicles/{id}")
+    @GET("EmergencyVehicles")
     Call<List<EmgVehicle>> getEmgVehicleList();
 
     @GET("EmergencyVehicles/{id}")
@@ -31,7 +31,7 @@ public interface ERMApiInterface {
     @PUT("EmergencyVehicles/{id}")
     Call<EmgVehicle> updateEmgVehicle(@Path("id") long id, @Body EmgVehicle emgvehicle);
     //EmgPersonal
-    @GET("EmgPersonal/{id}")
+    @GET("EmgPersonal")
     Call<List<EmgPersonal>> getEmgPersonalList();
 
     @GET("EmgPersonal/{id}")
@@ -48,7 +48,7 @@ public interface ERMApiInterface {
 
 
 
-    @GET("EmgService/{id}")
+    @GET("EmgService")
     Call<List<EmgService>> getEmgServiceList();
 
     @GET("EmgService/{id}")
