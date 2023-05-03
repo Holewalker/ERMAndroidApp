@@ -13,12 +13,10 @@ public interface EmgPersonalListContract {
 
             void onLoadEmgPersonalListError(String message);
 
-            void onLoadEmgPersonalSuccess(EmgPersonal emgPersonal);
         }
 
         void loadAllEmgPersonal(OnLoadEmgPersonalListener listener);
 
-        void loadEmgPersonalById(OnLoadEmgPersonalListener listener, Long id);
     }
 
 

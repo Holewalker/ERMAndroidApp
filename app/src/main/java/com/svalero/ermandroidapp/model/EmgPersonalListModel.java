@@ -33,26 +33,7 @@ public class EmgPersonalListModel implements EmgPersonalListContract.Model {
         });
 
     }
-
-    @Override
-    public void loadEmgPersonalById(OnLoadEmgPersonalListener listener, Long id) {
-        ERMApiInterface ermApi = ERMApi.buildInstance();
-        Call<EmgPersonal> callEmgPersonal = ermApi.getEmgPersonal(id);
-        callEmgPersonal.enqueue(new Callback<EmgPersonal>() {
-            @Override
-            public void onResponse(Call<EmgPersonal> call, Response<EmgPersonal> response) {
-                EmgPersonal emgPersonal = response.body();
-                listener.onLoadEmgPersonalSuccess(emgPersonal);
-            }
-
-            @Override
-            public void onFailure(Call<EmgPersonal> call, Throwable t) {
-                t.printStackTrace();
-                String message = "Error invocando a la operación";
-                listener.onLoadEmgPersonalListError(message);
-            }
-        });
-    }
-
-
 }
+
+
+
