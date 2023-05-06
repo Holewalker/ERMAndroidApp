@@ -19,14 +19,15 @@
         app:layout_constraintTop_toBottomOf="@+id/btnNewActivity" />
 
     <Button
-        android:id="@+id/btnListPlaces"
+        android:id="@+id/listEmgServices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:onClick="listPlacesNav"
+        android:onClick="listEmgServices"
         app:layout_constraintEnd_toEndOf="@+id/btnListActivities"
         app:layout_constraintStart_toStartOf="@+id/btnListActivities"
-        app:layout_constraintTop_toBottomOf="@+id/btnListActivities" />
+        app:layout_constraintTop_toBottomOf="@+id/btnListActivities"
+        android:text="@string/ListEmergencyServices"/>
 
     <Button
         android:id="@+id/btnListUsers"
@@ -34,9 +35,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:onClick="listUsersNav"
-        app:layout_constraintEnd_toEndOf="@+id/btnListPlaces"
-        app:layout_constraintStart_toStartOf="@+id/btnListPlaces"
-        app:layout_constraintTop_toBottomOf="@+id/btnListPlaces" />
+        app:layout_constraintEnd_toEndOf="@+id/listEmgServices"
+        app:layout_constraintStart_toStartOf="@+id/listEmgServices"
+        app:layout_constraintTop_toBottomOf="@+id/listEmgServices" />
 
 
     <Button

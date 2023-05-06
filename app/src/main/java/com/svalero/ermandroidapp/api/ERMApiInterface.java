@@ -48,19 +48,19 @@ public interface ERMApiInterface {
 
 
 
-    @GET("EmgService")
+    @GET("EmergencyServices")
     Call<List<EmgService>> getEmgServiceList();
 
-    @GET("EmgService/{id}")
+    @GET("EmergencyServices/{id}")
     Call<EmgService> getEmgService(@Path("id") long id);
 
-    @POST("EmgService")
+    @POST("EmergencyServices")
     Call<EmgService> addEmgService(@Body EmgService emgService);
 
-    @DELETE("EmgService/{id}")
+    @DELETE("EmergencyServices/{id}")
     Call<Void> deleteEmgService(@Path("id") long id);
 
-    @PUT("EmgService/{id}")
+    @PUT("EmergencyServices/{id}")
     Call<EmgService> updateEmgService(@Path("id") long id, @Body EmgService emgService);
 
 }

@@ -39,7 +39,7 @@ public class EmgServiceAdapter extends RecyclerView.Adapter<EmgServiceAdapter.Su
     @Override
     public SuperheroHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.emgService_item, parent, false);
+                .inflate(R.layout.emgservice_item, parent, false);
         return new SuperheroHolder(view);
     }
 
@@ -70,6 +70,7 @@ public class EmgServiceAdapter extends RecyclerView.Adapter<EmgServiceAdapter.Su
         public TextView emgServiceLocation;
         public TextView emgServiceType;
         public Button seeDetailsButton;
+        public Button editEmgServiceButton;
         public Button deleteEmgServiceButton;
         public View parentView;
 
@@ -81,8 +82,9 @@ public class EmgServiceAdapter extends RecyclerView.Adapter<EmgServiceAdapter.Su
             emgServiceLocation = view.findViewById(R.id.emgService_location);
             emgServiceType = view.findViewById(R.id.emgService_type);
 
-            seeDetailsButton = view.findViewById(R.id.see_details_button);
-            deleteEmgServiceButton = view.findViewById(R.id.delete_emgService_button);
+            seeDetailsButton = view.findViewById(R.id.bListDetails);
+            editEmgServiceButton = view.findViewById(R.id.bListEdit);
+            deleteEmgServiceButton = view.findViewById(R.id.bListDelete);
 
             // Ver detalles de la tarea
             //  seeDetailsButton.setOnClickListener(v -> seeDetails(getAdapterPosition()));

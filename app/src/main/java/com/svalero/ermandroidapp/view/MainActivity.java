@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.svalero.ermandroidapp.R;
+import com.svalero.ermandroidapp.model.EmgService.EmgServiceListModel;
 import com.svalero.ermandroidapp.utils.SessionUtil;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,10 +36,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void listPlacesNav(View view) {
-        Intent intent = new Intent(MainActivity.this, ListPlaces.class);
-        startActivity(intent);
-    }
+
 
     public void addPlaceNav(View view) {
         Intent intent = new Intent(MainActivity.this, AddPlace.class);
@@ -68,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
 
  */
 
+    public void listEmgServices(View view) {
+        Intent intent = new Intent(MainActivity.this, EmgServiceListView.class);
+        startActivity(intent);
+    }
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;

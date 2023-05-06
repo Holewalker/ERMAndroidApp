@@ -31,7 +31,7 @@ public class EmgServiceListView extends AppCompatActivity implements EmgServiceL
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //todo
-        // setContentView(R.layout.);
+        setContentView(R.layout.activity_list_emgservices);
         presenter = new EmgServiceListPresenter(this);
         initializeRecyclerView();
     }
@@ -39,7 +39,7 @@ public class EmgServiceListView extends AppCompatActivity implements EmgServiceL
     private void initializeRecyclerView() {
         emgServiceList = new ArrayList<>();
 
-        RecyclerView recyclerView = findViewById(R.id.task_list);
+        RecyclerView recyclerView = findViewById(R.id.rvListServices);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -59,7 +59,7 @@ public class EmgServiceListView extends AppCompatActivity implements EmgServiceL
         getMenuInflater().inflate(R.menu.actionbar, menu);
         return true;
     }
-
+/*
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.register_task) {
@@ -73,11 +73,11 @@ public class EmgServiceListView extends AppCompatActivity implements EmgServiceL
 
         return false;
     }
-
+*/
     @Override
     public void showEmgServiceList(List<EmgService> emgServices) {
-        emgServiceList.clear();
-        emgServiceList.addAll(emgServices);
+        this.emgServiceList.clear();
+        this.emgServiceList.addAll(emgServices);
         adapter.notifyDataSetChanged();
     }
 
