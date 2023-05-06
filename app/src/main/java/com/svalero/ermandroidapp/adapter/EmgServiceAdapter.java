@@ -1,6 +1,8 @@
 package com.svalero.ermandroidapp.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.svalero.ermandroidapp.R;
 import com.svalero.ermandroidapp.contract.EmgService.EmgServiceDeleteContract;
 import com.svalero.ermandroidapp.domain.EmgService;
+import com.svalero.ermandroidapp.view.EmgVehicleListView;
 
 
 import java.util.List;
@@ -86,22 +89,21 @@ public class EmgServiceAdapter extends RecyclerView.Adapter<EmgServiceAdapter.Su
             editEmgServiceButton = view.findViewById(R.id.bListEdit);
             deleteEmgServiceButton = view.findViewById(R.id.bListDelete);
 
-            // Ver detalles de la tarea
-            //  seeDetailsButton.setOnClickListener(v -> seeDetails(getAdapterPosition()));
+            seeDetailsButton.setOnClickListener(v -> seeDetails(getAdapterPosition()));
             // Eliminar tarea
             //  deleteEmgServiceButton.setOnClickListener(v -> deleteEmgService(getAdapterPosition()));
         }
     }
 
-//todo
-/*    private void seeDetails(int position) {
+
+    private void seeDetails(int position) {
         EmgService emgService = emgServiceList.get(position);
 
-        Intent intent = new Intent(context, EmgServiceDetailsView.class);
-        intent.putExtra("name", emgService.getName());
+        Intent intent = new Intent(context, EmgVehicleListView.class);
+        intent.putExtra("id", emgService.getId());
+        Log.d("id", String.valueOf(emgService.getId()));
         context.startActivity(intent);
     }
-    */
 
 //todo
     /*

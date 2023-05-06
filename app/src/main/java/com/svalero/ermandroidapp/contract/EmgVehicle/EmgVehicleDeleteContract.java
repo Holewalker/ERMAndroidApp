@@ -18,9 +18,16 @@ public interface EmgVehicleDeleteContract {
     interface View {
 
 
+        void showError(String errorMessage);
+
+        void showMessage(String message);
     }
 
     interface Presenter {
+
+        void onDeleteEmgVehicleSuccess(String message);
+
+        void onDeleteEmgVehicleError(String error);
 
     }
 }

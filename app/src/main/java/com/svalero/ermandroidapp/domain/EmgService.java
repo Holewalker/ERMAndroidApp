@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class EmgService {
 
 
-    private long id;
+    private Long id;
 
 
     private String location;

@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    public void logoutNav(View view) {
+    public void returnNav(View view) {
         Intent intent = new Intent(MainActivity.this, Login.class);
         startActivity(intent);
     }

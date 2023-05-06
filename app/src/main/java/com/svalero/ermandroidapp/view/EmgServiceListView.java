@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -85,5 +86,9 @@ public class EmgServiceListView extends AppCompatActivity implements EmgServiceL
     public void showMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
+    }
+    public void returnNav(View view) {
+        Intent intent = new Intent(EmgServiceListView.this, MainActivity.class);
+        startActivity(intent);
     }
 }

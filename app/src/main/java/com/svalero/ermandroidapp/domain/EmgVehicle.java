@@ -34,7 +34,7 @@ public class EmgVehicle {
 
     private double lon;
 
-    private LocalDate lastMaintenance;
+    private String lastMaintenance;
 
 
 }

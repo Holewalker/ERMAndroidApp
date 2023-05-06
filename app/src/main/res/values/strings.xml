@@ -11,4 +11,11 @@
     <string name="Edit">Edit</string>
     <string name="Delete">Delete</string>
     <string name="ListEmergencyServices">List emergency Services</string>
+    <string name="See_Vehicles">See Vehicles</string>
+    <string name="viewmap">Location</string>
+    <string name="are_you_sure_message">confirm the action</string>
+    <string name="remove_emgVehicle_message">vehicle is about to be removed</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="no_message">NO</string>
 </resources>
