@@ -18,4 +18,5 @@
     <string name="yes">yes</string>
     <string name="no">no</string>
     <string name="no_message">NO</string>
+    <string name="editButton">EDIT</string>
 </resources>

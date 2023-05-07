@@ -21,4 +21,8 @@ public class EmgService {
     private String type;
 
 
+    public EmgService(String location, String type) {
+        this.location = location;
+        this.type = type;
+    }
 }

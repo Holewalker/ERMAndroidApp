@@ -20,9 +20,13 @@ public interface EmgServiceAddContract {
     interface View {
 
 
+        void showError(String error);
+
+        void showMessage(String message);
     }
 
     interface Presenter {
 
+        void addEmgService(EmgService emgService);
     }
 }
