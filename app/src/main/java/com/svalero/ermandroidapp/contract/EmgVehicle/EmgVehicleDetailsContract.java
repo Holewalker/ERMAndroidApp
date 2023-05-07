@@ -2,6 +2,8 @@ package com.svalero.ermandroidapp.contract.EmgVehicle;
 
 import com.svalero.ermandroidapp.domain.EmgVehicle;
 
+import java.util.List;
+
 public interface EmgVehicleDetailsContract {
 
     interface Model {
@@ -13,16 +15,19 @@ public interface EmgVehicleDetailsContract {
 
         }
 
-        void loadEmgVehicleById(OnLoadEmgVehicleListener listener, Long id);
+        void loadEmgVehicleById(Long id, OnLoadEmgVehicleListener listener);
     }
 
 
     interface View {
 
+        public void showMessage(String message);
 
+        void showEmgVehicle(EmgVehicle emgVehicle);
     }
 
     interface Presenter {
 
+        void loadEmgVehicle(Long id);
     }
 }

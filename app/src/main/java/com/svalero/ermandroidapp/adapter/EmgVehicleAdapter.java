@@ -18,6 +18,7 @@ import com.svalero.ermandroidapp.contract.EmgVehicle.EmgVehicleDeleteContract;
 import com.svalero.ermandroidapp.domain.EmgVehicle;
 import com.svalero.ermandroidapp.presenter.EmgVehicle.EmgVehicleDeletePresenter;
 import com.svalero.ermandroidapp.view.EmgVehicleAddView;
+import com.svalero.ermandroidapp.view.EmgVehicleDetailsView;
 
 import java.util.List;
 
@@ -109,13 +110,12 @@ public class EmgVehicleAdapter extends RecyclerView.Adapter<EmgVehicleAdapter.Su
     //todo
     private void seeDetails(int position) {
         EmgVehicle emgVehicle = emgVehicleList.get(position);
-
-       // Intent intent = new Intent(context, EmgVehicleDetailsView.class);
-       // intent.putExtra("id", emgVehicle.getId());
-     //   context.startActivity(intent);
+        Intent intent = new Intent(context, EmgVehicleDetailsView.class);
+        intent.putExtra("emgVehicleId", emgVehicle.getId());
+        context.startActivity(intent);
     }
 
-    private void editEmgVehicle(int adapterPosition){
+    private void editEmgVehicle(int adapterPosition) {
         EmgVehicle emgVehicle = emgVehicleList.get(adapterPosition);
         Intent intent = new Intent(context, EmgVehicleAddView.class);
         intent.putExtra("editEmgVehicle", emgVehicle);

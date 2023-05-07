@@ -51,4 +51,19 @@ public class EmgVehicle implements Serializable {
         this.lon = lon;
         this.lastMaintenance = lastMaintenance;
     }
+
+    public EmgVehicle(long id, EmgService emgServiceVehicle, String model, String vin, String type, int operStatus, boolean onRoute, boolean available, String location, double lat, double lon, String lastMaintenance) {
+        this.id = id;
+        this.emgServiceVehicle = emgServiceVehicle;
+        this.model = model;
+        this.vin = vin;
+        this.type = type;
+        this.operStatus = operStatus;
+        this.onRoute = onRoute;
+        this.available = available;
+        this.location = location;
+        this.lat = lat;
+        this.lon = lon;
+        this.lastMaintenance = lastMaintenance;
+    }
 }
