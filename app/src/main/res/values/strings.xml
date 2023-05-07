@@ -33,4 +33,8 @@
     <string name="addEmgVehicleVin">VIN</string>
     <string name="addEmgVehicleModel">Model</string>
     <string name="backButton">Return</string>
+    <string name="error">Something went wrong</string>
+    <string name="addToFav">Add to Favorites</string>
+    <string name="success">Done!</string>
+    <string name="ListFavoriteVehicles">List Favorite Vehicles</string>
 </resources>

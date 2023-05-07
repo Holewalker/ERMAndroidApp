@@ -70,6 +70,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, EmgServiceListView.class);
         startActivity(intent);
     }
+    public void listFavVehicles(View view) {
+        Intent intent = new Intent(MainActivity.this, FavoriteVehicleListView.class);
+        startActivity(intent);
+    }
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;

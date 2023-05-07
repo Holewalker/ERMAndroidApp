@@ -24,17 +24,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:onClick="listEmgServices"
+        android:text="@string/ListEmergencyServices"
         app:layout_constraintEnd_toEndOf="@+id/btnListActivities"
         app:layout_constraintStart_toStartOf="@+id/btnListActivities"
-        app:layout_constraintTop_toBottomOf="@+id/btnListActivities"
-        android:text="@string/ListEmergencyServices"/>
+        app:layout_constraintTop_toBottomOf="@+id/btnListActivities" />
 
     <Button
-        android:id="@+id/btnListUsers"
+        android:id="@+id/btnFavList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:onClick="listUsersNav"
+        android:onClick="listFavVehicles"
+        android:text="@string/ListFavoriteVehicles"
         app:layout_constraintEnd_toEndOf="@+id/listEmgServices"
         app:layout_constraintStart_toStartOf="@+id/listEmgServices"
         app:layout_constraintTop_toBottomOf="@+id/listEmgServices" />
@@ -79,7 +80,6 @@
         app:layout_constraintBottom_toTopOf="@+id/btnLogout2"
         app:layout_constraintEnd_toEndOf="@+id/btnLogout2"
         app:layout_constraintStart_toStartOf="@+id/btnLogout2" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

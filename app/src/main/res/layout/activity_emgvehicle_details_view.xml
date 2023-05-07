@@ -150,5 +150,13 @@
             android:text="@string/backButton"
             app:layout_constraintBottom_toBottomOf="parent" />
 
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="addToFav"
+            android:text="@string/addToFav"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

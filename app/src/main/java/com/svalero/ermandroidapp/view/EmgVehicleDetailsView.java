@@ -1,21 +1,16 @@
 package com.svalero.ermandroidapp.view;
 
 
-import android.app.AlertDialog;
+import static com.svalero.ermandroidapp.utils.db.Constants.DATABASE_NAME;
+
 import android.content.Intent;
 import android.database.sqlite.SQLiteConstraintException;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 
@@ -23,8 +18,9 @@ import com.svalero.ermandroidapp.R;
 import com.svalero.ermandroidapp.contract.EmgVehicle.EmgVehicleDetailsContract;
 import com.svalero.ermandroidapp.domain.EmgVehicle;
 import com.svalero.ermandroidapp.presenter.EmgService.EmgVehicleDetailsPresenter;
+import com.svalero.ermandroidapp.utils.db.AppDatabase;
+import com.svalero.ermandroidapp.domain.FavoriteVehicle;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -95,8 +91,21 @@ public class EmgVehicleDetailsView extends AppCompatActivity implements EmgVehic
     public void showMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
+
     public void returnNav(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    public void addToFav(View view) {
+        final AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME).allowMainThreadQueries().build();
+        try {
+            FavoriteVehicle favoriteVehicle = new FavoriteVehicle(emgVehicle.getVin(), emgVehicle.getType());
+            db.vehicleListDao().insert(favoriteVehicle);
+            Toast.makeText(this, R.string.success, Toast.LENGTH_LONG).show();
+        } catch (SQLiteConstraintException sqLiteConstraintException) {
+            Toast.makeText(this, R.string.error, Toast.LENGTH_LONG).show();
+
+        }
     }
 }
