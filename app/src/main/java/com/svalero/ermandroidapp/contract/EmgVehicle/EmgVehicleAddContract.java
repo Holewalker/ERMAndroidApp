@@ -20,6 +20,9 @@ public interface EmgVehicleAddContract {
     interface View {
 
 
+        void showError(String error);
+
+        void showMessage(String message);
     }
 
     interface Presenter {

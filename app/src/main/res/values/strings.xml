@@ -23,4 +23,13 @@
     <string name="addEmgServiceType">Type</string>
     <string name="registerButton">Register</string>
     <string name="remove_emgService_message">This is going to get deleted</string>
+    <string name="addEmgVehicleLon">Longitude:</string>
+    <string name="addEmgVehicleLat">Latitude</string>
+    <string name="addEmgVehicleLocation">Location:</string>
+    <string name="addEmgVehicleType">Type:</string>
+    <string name="addEmgVehicleEmgServiceId">Emergency Service Id</string>
+    <string name="addEmgVehicleLastMaintenance">Last Maintenance</string>
+    <string name="addEmgVehicleOperStatus">Operating Status</string>
+    <string name="addEmgVehicleVin">VIN</string>
+    <string name="addEmgVehicleModel">Model</string>
 </resources>
