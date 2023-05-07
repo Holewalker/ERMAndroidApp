@@ -29,8 +29,8 @@ public interface ERMApiInterface {
     @POST("EmergencyVehicles")
     Call<EmgVehicle> addEmgVehicle(@Body EmgVehicle emgVehicle);
 
-    @DELETE("EmergencyVehicles")
-    Call<Void> deleteEmgVehicle(@Query("id") Long id);
+    @DELETE("EmergencyVehicles/{id}")
+    Call<Void> deleteEmgVehicle(@Path("id") Long id);
 
     @PUT("EmergencyVehicles/{id}")
     Call<EmgVehicle> updateEmgVehicle(@Path("id") Long id, @Body EmgVehicle emgvehicle);
@@ -44,8 +44,8 @@ public interface ERMApiInterface {
     @POST("EmgPersonal")
     Call<EmgPersonal> addEmgPersonal(@Body EmgPersonal emgPersonal);
 
-    @DELETE("EmgPersonal")
-    Call<Void> deleteEmgPersonal(@Query("id") Long id);
+    @DELETE("EmgPersonal/{id}")
+    Call<Void> deleteEmgPersonal(@Path("id") Long id);
 
     @PUT("EmgPersonal/{id}")
     Call<EmgPersonal> updateEmgPersonal(@Path("id") Long id, @Body EmgPersonal emgPersonal);
@@ -61,8 +61,8 @@ public interface ERMApiInterface {
     @POST("EmergencyServices")
     Call<EmgService> addEmgService(@Body EmgService emgService);
 
-    @DELETE("EmergencyServices")
-    Call<Void> deleteEmgService(@Query("id") Long id);
+    @DELETE("EmergencyServices/{id}")
+    Call<Void> deleteEmgService(@Path("id") Long id);
 
     @PUT("EmergencyServices/{id}")
     Call<EmgService> updateEmgService(@Path("id") Long id, @Body EmgService emgService);

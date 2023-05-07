@@ -1,7 +1,5 @@
 package com.svalero.ermandroidapp.view;
 
-import static com.svalero.storeapp.util.Constants.DATABASE_NAME;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,8 +20,6 @@ import com.svalero.ermandroidapp.presenter.EmgService.EmgServiceAddPresenter;
 public class EmgServiceAddView extends AppCompatActivity implements EmgServiceAddContract.View {
 
     private EditText eLocation;
-    private EditText etDescription;
-    private EditText etPrice;
     private EditText eType;
     private Button button;
     private EmgServiceAddPresenter emgServiceAddPresenter;
@@ -33,7 +29,7 @@ public class EmgServiceAddView extends AppCompatActivity implements EmgServiceAd
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_emgService_view);
+        setContentView(R.layout.activity_add_emgservice);
 
         /*
         final StoreAppDatabase db = Room.databaseBuilder(this, StoreAppDatabase.class, DATABASE_NAME).allowMainThreadQueries().build();
@@ -66,13 +62,13 @@ public class EmgServiceAddView extends AppCompatActivity implements EmgServiceAd
 
     @Override
     public void showError(String error) {
-        Snackbar.make(((EditText) findViewById(R.id.emgServiceAddName)), error,
+        Snackbar.make(((EditText) findViewById(R.id.emgServiceAddLocation)), error,
                 BaseTransientBottomBar.LENGTH_LONG).show();
     }
 
     @Override
     public void showMessage(String message) {
-        Snackbar.make(((EditText) findViewById(R.id.emgServiceAddName)), message,
+        Snackbar.make(((EditText) findViewById(R.id.emgServiceAddLocation)), message,
                 BaseTransientBottomBar.LENGTH_LONG).show();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

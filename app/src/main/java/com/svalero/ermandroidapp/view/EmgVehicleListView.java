@@ -2,11 +2,12 @@ package com.svalero.ermandroidapp.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -62,21 +63,22 @@ public class EmgVehicleListView extends AppCompatActivity implements EmgVehicleL
         return true;
     }
 
-    /*
-        @Override
-        public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-            if (item.getItemId() == R.id.register_task) {
-                Intent intent = new Intent(this, addEmergencyVehicleView.class);
-                startActivity(intent);
-                return true;
-            } else if (item.getItemId() == R.id.view_map) {
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.register_emgservice) {
+            Intent intent = new Intent(this, EmgServiceAddView.class);
+            startActivity(intent);
+            return true;
+        }/*
+            else if (item.getItemId() == R.id.view_map) {
                 Intent intent = new Intent(this, MapsActivity.class);
                 startActivity(intent);
             }
+*/
+        return false;
+    }
 
-            return false;
-        }
-    */
     @Override
     public void showEmgVehicleList(List<EmgVehicle> emgVehicles) {
         this.emgVehicleList.clear();

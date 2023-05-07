@@ -5,6 +5,10 @@ public interface EmgServiceDeleteContract {
     interface Model {
         interface OnDeleteEmgServiceListener {
 
+            void onDeleteEmgServiceSuccess(String message);
+
+            void onDeleteEmgServiceError(String error);
+
             void onDeleteSuccess();
 
             void onDeleteError(String message);
@@ -24,6 +28,6 @@ public interface EmgServiceDeleteContract {
     }
 
     interface Presenter {
-
+        void deleteEmgService(Long id);
     }
 }

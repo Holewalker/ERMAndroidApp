@@ -19,4 +19,8 @@
     <string name="no">no</string>
     <string name="no_message">NO</string>
     <string name="editButton">EDIT</string>
+    <string name="addEmgServiceLocation">Location</string>
+    <string name="addEmgServiceType">Type</string>
+    <string name="registerButton">Register</string>
+    <string name="remove_emgService_message">This is going to get deleted</string>
 </resources>

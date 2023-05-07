@@ -1,5 +1,11 @@
 package com.svalero.ermandroidapp.contract.EmgVehicle;
 
+import android.content.Intent;
+import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
+
+import com.svalero.ermandroidapp.R;
 import com.svalero.ermandroidapp.domain.EmgVehicle;
 
 import java.util.List;
@@ -7,7 +13,6 @@ import java.util.List;
 public interface EmgVehicleListContract {
 
     interface Model {
-
 
 
         interface OnLoadEmgVehicleListener {
@@ -30,21 +35,8 @@ public interface EmgVehicleListContract {
     interface View {
 
 
-        /*
-                @Override
-                public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-                    if (item.getItemId() == R.id.register_task) {
-                        Intent intent = new Intent(this, addEmergencyVehicleView.class);
-                        startActivity(intent);
-                        return true;
-                    } else if (item.getItemId() == R.id.view_map) {
-                        Intent intent = new Intent(this, MapsActivity.class);
-                        startActivity(intent);
-                    }
+        public boolean onOptionsItemSelected(@NonNull MenuItem item);
 
-                    return false;
-                }
-            */
         void showEmgVehicleList(List<EmgVehicle> emgVehicles);
 
         void showMessage(String message);

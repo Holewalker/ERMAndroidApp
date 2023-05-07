@@ -60,21 +60,17 @@ public class EmgServiceListView extends AppCompatActivity implements EmgServiceL
         getMenuInflater().inflate(R.menu.actionbar, menu);
         return true;
     }
-/*
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.register_task) {
-            Intent intent = new Intent(this, addEmergencyServiceView.class);
+        if (item.getItemId() == R.id.register_emgservice) {
+            Intent intent = new Intent(this, EmgServiceAddView.class);
             startActivity(intent);
             return true;
-        } else if (item.getItemId() == R.id.view_map) {
-            Intent intent = new Intent(this, MapsActivity.class);
-            startActivity(intent);
         }
-
         return false;
     }
-*/
+
     @Override
     public void showEmgServiceList(List<EmgService> emgServices) {
         this.emgServiceList.clear();
@@ -87,6 +83,7 @@ public class EmgServiceListView extends AppCompatActivity implements EmgServiceL
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
     }
+
     public void returnNav(View view) {
         Intent intent = new Intent(EmgServiceListView.this, MainActivity.class);
         startActivity(intent);
