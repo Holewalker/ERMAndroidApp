@@ -15,10 +15,8 @@ import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 import com.svalero.ermandroidapp.R;
 import com.svalero.ermandroidapp.contract.EmgVehicle.EmgVehicleDeleteContract;
-import com.svalero.ermandroidapp.domain.EmgService;
 import com.svalero.ermandroidapp.domain.EmgVehicle;
-import com.svalero.ermandroidapp.presenter.EmgVehicle.DeleteEmgVehiclePresenter;
-import com.svalero.ermandroidapp.view.EmgServiceAddView;
+import com.svalero.ermandroidapp.presenter.EmgVehicle.EmgVehicleDeletePresenter;
 import com.svalero.ermandroidapp.view.EmgVehicleAddView;
 
 import java.util.List;
@@ -29,12 +27,12 @@ public class EmgVehicleAdapter extends RecyclerView.Adapter<EmgVehicleAdapter.Su
     private Context context;
     private List<EmgVehicle> emgVehicleList;
     private View snackBarView;
-    private DeleteEmgVehiclePresenter presenter;
+    private EmgVehicleDeletePresenter presenter;
 
     public EmgVehicleAdapter(Context context, List<EmgVehicle> dataList) {
         this.context = context;
         this.emgVehicleList = dataList;
-        presenter = new DeleteEmgVehiclePresenter(this);
+        presenter = new EmgVehicleDeletePresenter(this);
     }
 
     public Context getContext() {

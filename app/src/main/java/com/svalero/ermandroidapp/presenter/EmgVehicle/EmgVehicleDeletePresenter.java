@@ -1,27 +1,27 @@
 package com.svalero.ermandroidapp.presenter.EmgVehicle;
 
 
-import com.svalero.ermandroidapp.adapter.EmgServiceAdapter;
-import com.svalero.ermandroidapp.contract.EmgService.EmgServiceDeleteContract;
-import com.svalero.ermandroidapp.model.EmgService.EmgServiceDeleteModel;
+import com.svalero.ermandroidapp.adapter.EmgVehicleAdapter;
+import com.svalero.ermandroidapp.contract.EmgVehicle.EmgVehicleDeleteContract;
+import com.svalero.ermandroidapp.model.EmgVehicle.EmgVehicleDeleteModel;
 
-public class EmgVehicleDeletePresenter implements EmgServiceDeleteContract.Presenter, EmgServiceDeleteContract.Model.OnDeleteEmgServiceListener {
+public class EmgVehicleDeletePresenter implements EmgVehicleDeleteContract.Presenter, EmgVehicleDeleteContract.Model.OnDeleteEmgVehicleListener {
 
-    private EmgServiceDeleteModel model;
-    private EmgServiceAdapter view;
+    private EmgVehicleDeleteModel model;
+    private EmgVehicleAdapter view;
 
-    public EmgVehicleDeletePresenter(EmgServiceAdapter view) {
-        model = new EmgServiceDeleteModel();
+    public EmgVehicleDeletePresenter(EmgVehicleAdapter view) {
+        model = new EmgVehicleDeleteModel();
         this.view = view;
     }
 
     @Override
-    public void onDeleteEmgServiceSuccess(String message) {
+    public void onDeleteEmgVehicleSuccess(String message) {
         view.showMessage(message);
     }
 
     @Override
-    public void onDeleteEmgServiceError(String error) {
+    public void onDeleteEmgVehicleError(String error) {
         view.showMessage(error);
     }
 
@@ -36,7 +36,7 @@ public class EmgVehicleDeletePresenter implements EmgServiceDeleteContract.Prese
     }
 
 
-    public void deleteEmgService(Long id) {
-        model.deleteEmgService(id, this);
+    public void deleteEmgVehicle(long id) {
+        model.deleteEmgVehicle(id, this);
     }
 }
