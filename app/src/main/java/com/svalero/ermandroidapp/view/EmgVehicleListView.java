@@ -75,12 +75,7 @@ public class EmgVehicleListView extends AppCompatActivity implements EmgVehicleL
             intent.putExtra("serviceId", serviceId);
             startActivity(intent);
             return true;
-        }/*
-            else if (item.getItemId() == R.id.view_map) {
-                Intent intent = new Intent(this, MapsActivity.class);
-                startActivity(intent);
-            }
-*/
+        }
         return false;
     }
 

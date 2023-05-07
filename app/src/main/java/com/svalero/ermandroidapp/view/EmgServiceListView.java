@@ -67,6 +67,9 @@ public class EmgServiceListView extends AppCompatActivity implements EmgServiceL
             Intent intent = new Intent(this, EmgServiceAddView.class);
             startActivity(intent);
             return true;
+        } else if (item.getItemId() == R.id.view_map) {
+            Intent intent = new Intent(this, MapsActivity.class);
+            startActivity(intent);
         }
         return false;
     }
