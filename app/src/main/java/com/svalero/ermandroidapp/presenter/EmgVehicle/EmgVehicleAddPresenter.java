@@ -1,28 +1,27 @@
 package com.svalero.ermandroidapp.presenter.EmgVehicle;
 
-import com.svalero.ermandroidapp.contract.EmgService.EmgServiceAddContract;
-import com.svalero.ermandroidapp.domain.EmgService;
-import com.svalero.ermandroidapp.model.EmgService.EmgServiceAddModel;
-import com.svalero.ermandroidapp.view.EmgServiceAddView;
+import com.svalero.ermandroidapp.contract.EmgVehicle.EmgVehicleAddContract;
+import com.svalero.ermandroidapp.domain.EmgVehicle;
+import com.svalero.ermandroidapp.model.EmgVehicle.EmgVehicleAddModel;
+import com.svalero.ermandroidapp.view.EmgVehicleAddView;
 
-public class EmgVehicleAddPresenter implements EmgServiceAddContract.Presenter, EmgServiceAddContract.Model.OnAddEmgServiceListener {
+public class EmgVehicleAddPresenter implements EmgVehicleAddContract.Presenter, EmgVehicleAddContract.Model.OnAddEmgVehicleListener {
 
-    private EmgServiceAddModel model;
-    private EmgServiceAddView view;
+    private EmgVehicleAddModel model;
+    private EmgVehicleAddView view;
 
-    public EmgVehicleAddPresenter(EmgServiceAddView view) {
-        model = new EmgServiceAddModel();
+    public EmgVehicleAddPresenter(EmgVehicleAddView view) {
+        model = new EmgVehicleAddModel();
         this.view = view;
     }
 
     @Override
-    public void addEmgService(EmgService emgService) {
-        model.addEmgService(emgService, this);
+    public void addEmgVehicle(EmgVehicle emgVehicle) {
+        model.addEmgVehicle(emgVehicle, this);
     }
 
     @Override
-    public void onAddSuccess(EmgService emgService) {
-        view.showMessage("El emgServiceo: " + emgService.getLocation() + " se ha añadido correctamente!");
+    public void onAddSuccess(EmgVehicle emgVehicle) {
 
     }
 

@@ -27,5 +27,6 @@ public interface EmgVehicleAddContract {
 
     interface Presenter {
 
+        void addEmgVehicle(EmgVehicle EmgVehicle);
     }
 }

@@ -1,30 +1,30 @@
 package com.svalero.ermandroidapp.presenter.EmgVehicle;
 
 
-import com.svalero.ermandroidapp.contract.EmgService.EmgServiceEditContract;
-import com.svalero.ermandroidapp.domain.EmgService;
-import com.svalero.ermandroidapp.model.EmgService.EmgServiceEditModel;
-import com.svalero.ermandroidapp.view.EmgServiceAddView;
+import com.svalero.ermandroidapp.contract.EmgVehicle.EmgVehicleEditContract;
+import com.svalero.ermandroidapp.domain.EmgVehicle;
+import com.svalero.ermandroidapp.model.EmgVehicle.EmgVehicleEditModel;
+import com.svalero.ermandroidapp.view.EmgVehicleAddView;
 
-public class EmgVehicleEditPresenter implements EmgServiceEditContract.Presenter, EmgServiceEditContract.Model.OnEditEmgServiceListener {
-    private EmgServiceEditModel model;
-    private EmgServiceAddView view;
+public class EmgVehicleEditPresenter implements EmgVehicleEditContract.Presenter, EmgVehicleEditContract.Model.OnEditEmgVehicleListener {
+    private EmgVehicleEditModel model;
+    private EmgVehicleAddView view;
 
-    public EmgVehicleEditPresenter(EmgServiceAddView view) {
-        model = new EmgServiceEditModel();
+    public EmgVehicleEditPresenter(EmgVehicleAddView view) {
+        model = new EmgVehicleEditModel();
         this.view = view;
     }
 
 
     @Override
-    public void emgServiceEdit(Long id, EmgService emgService) {
-        model.emgServiceEdit(id, emgService, this);
+    public void emgVehicleEdit(Long id, EmgVehicle EmgVehicle) {
+        model.editEmgVehicle(id, EmgVehicle, this);
     }
 
 
     @Override
-    public void onEditSuccess(EmgService emgService) {
-        view.showMessage("El emgService se ha editado correctamente!");
+    public void onEditSuccess(EmgVehicle EmgVehicle) {
+        view.showMessage("El EmgVehicle se ha editado correctamente!");
     }
 
     @Override

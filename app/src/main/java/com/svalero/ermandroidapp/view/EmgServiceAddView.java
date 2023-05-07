@@ -75,5 +75,11 @@ public class EmgServiceAddView extends AppCompatActivity implements EmgServiceAd
         } else {
             emgServiceAddPresenter.addEmgService(emgService);
         }
+        Intent intent = new Intent(this, EmgServiceListView.class);
+        startActivity(intent);
+    }
+    public void returnNav(View view) {
+        Intent intent = new Intent(this, EmgServiceListView.class);
+        startActivity(intent);
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.EmgVehicleListView">
+    tools:context=".view.EmgVehicleAddView">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -126,24 +126,22 @@
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="275dp" />
 
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/addEmgVehicleLastMaintenance" />
-
-            <EditText
-                android:id="@+id/emgVehicleAddLastMaintenance"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:inputType="date"
-                tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="275dp" />
-
 
         </LinearLayout>
 
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/addEmgVehicleLastMaintenance" />
+
+        <EditText
+            android:id="@+id/emgVehicleAddLastMaintenance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date" />
 
         <Button
             android:id="@+id/emgVehicleAddRegister"

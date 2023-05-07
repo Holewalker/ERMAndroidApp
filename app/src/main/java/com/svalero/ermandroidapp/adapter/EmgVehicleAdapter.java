@@ -15,8 +15,11 @@ import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 import com.svalero.ermandroidapp.R;
 import com.svalero.ermandroidapp.contract.EmgVehicle.EmgVehicleDeleteContract;
+import com.svalero.ermandroidapp.domain.EmgService;
 import com.svalero.ermandroidapp.domain.EmgVehicle;
 import com.svalero.ermandroidapp.presenter.EmgVehicle.DeleteEmgVehiclePresenter;
+import com.svalero.ermandroidapp.view.EmgServiceAddView;
+import com.svalero.ermandroidapp.view.EmgVehicleAddView;
 
 import java.util.List;
 
@@ -99,7 +102,8 @@ public class EmgVehicleAdapter extends RecyclerView.Adapter<EmgVehicleAdapter.Su
 
             // Ver detalles
             seeDetailsButton.setOnClickListener(v -> seeDetails(getAdapterPosition()));
-            // Eliminar tarea
+            editEmgVehicleButton.setOnClickListener(v -> editEmgVehicle(getAdapterPosition()));
+
             deleteEmgVehicleButton.setOnClickListener(v -> deleteEmgVehicle(getAdapterPosition()));
         }
     }
@@ -108,13 +112,18 @@ public class EmgVehicleAdapter extends RecyclerView.Adapter<EmgVehicleAdapter.Su
     private void seeDetails(int position) {
         EmgVehicle emgVehicle = emgVehicleList.get(position);
 
-        //   Intent intent = new Intent(context, EmgVehicleDetailsView.class);
-//        intent.putExtra("id", emgVehicle.getId());
-        //    context.startActivity(intent);
+       // Intent intent = new Intent(context, EmgVehicleDetailsView.class);
+       // intent.putExtra("id", emgVehicle.getId());
+     //   context.startActivity(intent);
     }
 
+    private void editEmgVehicle(int adapterPosition){
+        EmgVehicle emgVehicle = emgVehicleList.get(adapterPosition);
+        Intent intent = new Intent(context, EmgVehicleAddView.class);
+        intent.putExtra("editEmgVehicle", emgVehicle);
+        context.startActivity(intent);
 
-//todo
+    }
 
     private void deleteEmgVehicle(int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);

@@ -24,5 +24,6 @@ public interface EmgVehicleEditContract {
 
     interface Presenter {
 
+        void emgVehicleEdit(Long id, EmgVehicle EmgVehicle);
     }
 }

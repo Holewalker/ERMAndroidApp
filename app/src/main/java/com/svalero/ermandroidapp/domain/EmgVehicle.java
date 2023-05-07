@@ -14,8 +14,9 @@ public class EmgVehicle implements Serializable {
 
     private long id;
 
-    private EmgService emgServiceVehicle;
+    private long emgServiceId;
 
+    private EmgService emgServiceVehicle;
     private String model;
 
     private String vin;
@@ -37,5 +38,17 @@ public class EmgVehicle implements Serializable {
 
     private String lastMaintenance;
 
-
+    public EmgVehicle(long emgServiceId, String model, String vin, String type, int operStatus, String location, double lat, double lon, String lastMaintenance) {
+        this.emgServiceId = emgServiceId;
+        this.model = model;
+        this.vin = vin;
+        this.type = type;
+        this.operStatus = operStatus;
+        this.onRoute = false;
+        this.available = true;
+        this.location = location;
+        this.lat = lat;
+        this.lon = lon;
+        this.lastMaintenance = lastMaintenance;
+    }
 }

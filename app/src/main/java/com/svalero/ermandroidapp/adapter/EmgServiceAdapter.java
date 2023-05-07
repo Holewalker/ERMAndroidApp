@@ -106,6 +106,7 @@ public class EmgServiceAdapter extends RecyclerView.Adapter<EmgServiceAdapter.Su
 
         Intent intent = new Intent(context, EmgVehicleListView.class);
         intent.putExtra("id", emgService.getId());
+        intent.putExtra("currentEmgService", emgService);
         Log.d("id", String.valueOf(emgService.getId()));
         context.startActivity(intent);
     }

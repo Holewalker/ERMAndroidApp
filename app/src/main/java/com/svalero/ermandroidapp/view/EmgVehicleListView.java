@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.svalero.ermandroidapp.R;
 import com.svalero.ermandroidapp.adapter.EmgVehicleAdapter;
 import com.svalero.ermandroidapp.contract.EmgVehicle.EmgVehicleListContract;
+import com.svalero.ermandroidapp.domain.EmgService;
 import com.svalero.ermandroidapp.domain.EmgVehicle;
 import com.svalero.ermandroidapp.presenter.EmgVehicle.EmgVehicleListPresenter;
 
@@ -27,6 +28,7 @@ public class EmgVehicleListView extends AppCompatActivity implements EmgVehicleL
     private EmgVehicleAdapter adapter;
     private EmgVehicleListPresenter presenter;
     private Long serviceId;
+    EmgService currentEmgService;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class EmgVehicleListView extends AppCompatActivity implements EmgVehicleL
         setContentView(R.layout.activity_list_emgvehicles);
         Intent intentFrom = getIntent();
         serviceId = intentFrom.getLongExtra("id", 0L);
+        currentEmgService = (EmgService) intentFrom.getSerializableExtra("currentEmgService");
         presenter = new EmgVehicleListPresenter(this);
         initializeRecyclerView();
     }
@@ -67,7 +70,9 @@ public class EmgVehicleListView extends AppCompatActivity implements EmgVehicleL
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.register_emgservice) {
-            Intent intent = new Intent(this, EmgServiceAddView.class);
+            Intent intent = new Intent(this, EmgVehicleAddView.class);
+            intent.putExtra("currentEmgService", currentEmgService);
+            intent.putExtra("serviceId", serviceId);
             startActivity(intent);
             return true;
         }/*
