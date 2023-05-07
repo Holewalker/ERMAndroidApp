@@ -4,6 +4,8 @@ import com.svalero.ermandroidapp.contract.EmgVehicle.EmgVehicleDetailsContract;
 import com.svalero.ermandroidapp.domain.EmgVehicle;
 import com.svalero.ermandroidapp.model.EmgVehicle.EmgVehicleDetailsModel;
 
+import java.util.List;
+
 
 public class EmgVehicleDetailsPresenter implements EmgVehicleDetailsContract.Presenter, EmgVehicleDetailsContract.Model.OnLoadEmgVehicleListener {
 
@@ -17,7 +19,7 @@ public class EmgVehicleDetailsPresenter implements EmgVehicleDetailsContract.Pre
     }
 
     @Override
-    public void onLoadEmgVehicleDetailsSuccess(EmgVehicle emgVehicle) {
+    public void onLoadEmgVehicleDetailsSuccess(List<EmgVehicle> emgVehicle) {
         view.showEmgVehicle(emgVehicle);
     }
 

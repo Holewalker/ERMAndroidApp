@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ import com.svalero.ermandroidapp.domain.EmgVehicle;
 import com.svalero.ermandroidapp.presenter.EmgService.EmgVehicleDetailsPresenter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class EmgVehicleDetailsView extends AppCompatActivity implements EmgVehicleDetailsContract.View {
@@ -69,18 +71,18 @@ public class EmgVehicleDetailsView extends AppCompatActivity implements EmgVehic
     }
 
     @Override
-    public void showEmgVehicle(EmgVehicle emgVehicle) {
-        tvEmgServiceId.setText(String.valueOf(emgVehicle.getEmgServiceVehicle().getId()));
-        tvModel.setText(emgVehicle.getModel());
-        tvVin.setText(emgVehicle.getVin());
-        tvOperStatus.setText(String.valueOf(emgVehicle.getOperStatus()));
-        tvLat.setText(String.valueOf(emgVehicle.getLat()));
-        tvLon.setText(String.valueOf(emgVehicle.getLon()));
-        tvLastMaint.setText(emgVehicle.getLastMaintenance());
-        tvLocation.setText(emgVehicle.getLocation());
-        tvType.setText(emgVehicle.getType());
+    public void showEmgVehicle(List<EmgVehicle> emgVehicle) {
+        tvEmgServiceId.setText(String.valueOf(emgVehicle.get(0).getEmgServiceVehicle().getId()));
+        tvModel.setText(emgVehicle.get(0).getModel());
+        tvVin.setText(emgVehicle.get(0).getVin());
+        tvOperStatus.setText(String.valueOf(emgVehicle.get(0).getOperStatus()));
+        tvLat.setText(String.valueOf(emgVehicle.get(0).getLat()));
+        tvLon.setText(String.valueOf(emgVehicle.get(0).getLon()));
+        tvLastMaint.setText(emgVehicle.get(0).getLastMaintenance());
+        tvLocation.setText(emgVehicle.get(0).getLocation());
+        tvType.setText(emgVehicle.get(0).getType());
 
-        this.emgVehicle = emgVehicle;
+        this.emgVehicle = emgVehicle.get(0);
     }
 
 
@@ -92,5 +94,9 @@ public class EmgVehicleDetailsView extends AppCompatActivity implements EmgVehic
     @Override
     public void showMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
+    public void returnNav(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

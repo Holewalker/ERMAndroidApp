@@ -21,7 +21,7 @@ public interface ERMApiInterface {
     Call<List<EmgVehicle>> getEmgVehicleList();
 
     @GET("EmergencyVehicles")
-    Call<EmgVehicle> getEmgVehicle(@Query("id") Long id);
+    Call<List<EmgVehicle>> getEmgVehicle(@Query("id") Long id);
 
     @GET("EmergencyVehicles")
     Call<List<EmgVehicle>> getEmgVehicleFromService(@Query("emgService") Long idService);

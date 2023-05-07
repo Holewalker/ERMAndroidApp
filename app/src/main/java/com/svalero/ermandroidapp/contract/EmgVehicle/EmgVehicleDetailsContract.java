@@ -9,7 +9,7 @@ public interface EmgVehicleDetailsContract {
     interface Model {
         interface OnLoadEmgVehicleListener {
 
-            void onLoadEmgVehicleDetailsSuccess(EmgVehicle emgVehicle);
+            void onLoadEmgVehicleDetailsSuccess(List<EmgVehicle> emgVehicle);
 
             void onLoadEmgVehicleDetailsError(String message);
 
@@ -23,7 +23,7 @@ public interface EmgVehicleDetailsContract {
 
         public void showMessage(String message);
 
-        void showEmgVehicle(EmgVehicle emgVehicle);
+        void showEmgVehicle(List<EmgVehicle> emgVehicle);
     }
 
     interface Presenter {
