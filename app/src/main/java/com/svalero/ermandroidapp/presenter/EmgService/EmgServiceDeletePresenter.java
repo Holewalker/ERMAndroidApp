@@ -5,12 +5,12 @@ import com.svalero.ermandroidapp.adapter.EmgServiceAdapter;
 import com.svalero.ermandroidapp.contract.EmgService.EmgServiceDeleteContract;
 import com.svalero.ermandroidapp.model.EmgService.EmgServiceDeleteModel;
 
-public class DeleteEmgServicePresenter implements EmgServiceDeleteContract.Presenter, EmgServiceDeleteContract.Model.OnDeleteEmgServiceListener {
+public class EmgServiceDeletePresenter implements EmgServiceDeleteContract.Presenter, EmgServiceDeleteContract.Model.OnDeleteEmgServiceListener {
 
     private EmgServiceDeleteModel model;
     private EmgServiceAdapter view;
 
-    public DeleteEmgServicePresenter(EmgServiceAdapter view) {
+    public EmgServiceDeletePresenter(EmgServiceAdapter view) {
         model = new EmgServiceDeleteModel();
         this.view = view;
     }

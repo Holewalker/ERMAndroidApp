@@ -17,7 +17,8 @@ import com.google.android.material.snackbar.Snackbar;
 import com.svalero.ermandroidapp.R;
 import com.svalero.ermandroidapp.contract.EmgService.EmgServiceDeleteContract;
 import com.svalero.ermandroidapp.domain.EmgService;
-import com.svalero.ermandroidapp.presenter.EmgService.DeleteEmgServicePresenter;
+import com.svalero.ermandroidapp.presenter.EmgService.EmgServiceDeletePresenter;
+import com.svalero.ermandroidapp.view.EmgServiceAddView;
 import com.svalero.ermandroidapp.view.EmgVehicleListView;
 
 
@@ -29,12 +30,12 @@ public class EmgServiceAdapter extends RecyclerView.Adapter<EmgServiceAdapter.Su
     private Context context;
     private List<EmgService> emgServiceList;
     private View snackBarView;
-    private DeleteEmgServicePresenter presenter;
+    private EmgServiceDeletePresenter presenter;
 
     public EmgServiceAdapter(Context context, List<EmgService> dataList) {
         this.context = context;
         this.emgServiceList = dataList;
-        presenter = new DeleteEmgServicePresenter(this);
+        presenter = new EmgServiceDeletePresenter(this);
     }
 
     public Context getContext() {
@@ -94,7 +95,7 @@ public class EmgServiceAdapter extends RecyclerView.Adapter<EmgServiceAdapter.Su
             deleteEmgServiceButton = view.findViewById(R.id.bListDelete);
 
             seeDetailsButton.setOnClickListener(v -> seeDetails(getAdapterPosition()));
-
+            editEmgServiceButton.setOnClickListener((v -> editEmgService(getAdapterPosition())));
             deleteEmgServiceButton.setOnClickListener(v -> deleteEmgService(getAdapterPosition()));
         }
     }
@@ -109,7 +110,13 @@ public class EmgServiceAdapter extends RecyclerView.Adapter<EmgServiceAdapter.Su
         context.startActivity(intent);
     }
 
-//todo
+    private void editEmgService(int adapterPosition){
+        EmgService emgService = emgServiceList.get(adapterPosition);
+        Intent intent = new Intent(context, EmgServiceAddView.class);
+        intent.putExtra("editEmgService", emgService);
+        context.startActivity(intent);
+
+    }
 
     private void deleteEmgService(int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);

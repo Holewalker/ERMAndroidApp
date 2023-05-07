@@ -1,5 +1,7 @@
 package com.svalero.ermandroidapp.domain;
 
+import java.io.Serializable;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmgService {
+public class EmgService implements Serializable {
 
 
     private Long id;

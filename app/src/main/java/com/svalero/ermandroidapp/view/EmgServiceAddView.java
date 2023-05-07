@@ -15,6 +15,7 @@ import com.svalero.ermandroidapp.R;
 import com.svalero.ermandroidapp.contract.EmgService.EmgServiceAddContract;
 import com.svalero.ermandroidapp.domain.EmgService;
 import com.svalero.ermandroidapp.presenter.EmgService.EmgServiceAddPresenter;
+import com.svalero.ermandroidapp.presenter.EmgService.EmgServiceEditPresenter;
 
 
 public class EmgServiceAddView extends AppCompatActivity implements EmgServiceAddContract.View {
@@ -23,25 +24,13 @@ public class EmgServiceAddView extends AppCompatActivity implements EmgServiceAd
     private EditText eType;
     private Button button;
     private EmgServiceAddPresenter emgServiceAddPresenter;
-    // private EditEmgServicePresenter editEmgServicePresenter;
+    private EmgServiceEditPresenter emgServiceEditPresenter;
     EmgService emgServiceEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_emgservice);
-
-        /*
-        final StoreAppDatabase db = Room.databaseBuilder(this, StoreAppDatabase.class, DATABASE_NAME).allowMainThreadQueries().build();
-        persistData = new PersistData(0, "", "", "",false);
-        try{
-            persistData = db.getPersistDataDAO().getPersistData();
-        }   catch (SQLiteConstraintException sce) {
-            Log.i("EmgServiceAddView" , "onCreate - Error");
-            sce.printStackTrace();
-        } finally {
-            db.close();
-        }*/
 
         eLocation = findViewById(R.id.emgServiceAddLocation);
         eType = findViewById(R.id.emgServiceAddType);
@@ -57,6 +46,8 @@ public class EmgServiceAddView extends AppCompatActivity implements EmgServiceAd
             button.setText(R.string.editButton);
         }
         emgServiceAddPresenter = new EmgServiceAddPresenter(this);
+        emgServiceEditPresenter = new EmgServiceEditPresenter(this);
+
     }
 
 
@@ -78,13 +69,11 @@ public class EmgServiceAddView extends AppCompatActivity implements EmgServiceAd
         String location = eLocation.getText().toString();
         String type = eType.getText().toString();
 
-       /* if (emgServiceEdit != null) {
-            EmgService emgService = new EmgService(emgServiceEdit.getId(), location, description, price, type);
-            editEmgServicePresenter.editEmgService(emgService, persistData.getToken());
-        } else {*/
-
         EmgService emgService = new EmgService(location, type);
-        emgServiceAddPresenter.addEmgService(emgService);
-        // }
+        if (emgServiceEdit != null) {
+            emgServiceEditPresenter.emgServiceEdit(emgServiceEdit.getId(), emgService);
+        } else {
+            emgServiceAddPresenter.addEmgService(emgService);
+        }
     }
 }

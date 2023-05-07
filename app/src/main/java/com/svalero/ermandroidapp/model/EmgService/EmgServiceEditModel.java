@@ -13,7 +13,7 @@ public class EmgServiceEditModel implements EmgServiceEditContract.Model {
 
 
     @Override
-    public void editEmgService(Long id, EmgService emgService, OnEditEmgServiceListener listener) {
+    public void emgServiceEdit(Long id, EmgService emgService, OnEditEmgServiceListener listener) {
         ERMApiInterface ermApi = ERMApi.buildInstance();
         Call<EmgService> callEmgService = ermApi.updateEmgService(id, emgService);
         callEmgService.enqueue(new Callback<EmgService>() {

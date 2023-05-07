@@ -11,9 +11,11 @@ public interface EmgServiceEditContract {
 
             void onEditError(String message);
 
+            void emgServiceEdit(Long id, EmgService emgService);
+
         }
 
-        void editEmgService(Long id, EmgService emgService, OnEditEmgServiceListener listener);
+        void emgServiceEdit(Long id, EmgService emgService, OnEditEmgServiceListener listener);
     }
 
 
@@ -24,5 +26,6 @@ public interface EmgServiceEditContract {
 
     interface Presenter {
 
+        void emgServiceEdit(Long id, EmgService emgService);
     }
 }
