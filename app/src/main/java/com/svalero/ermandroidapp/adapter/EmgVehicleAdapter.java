@@ -49,6 +49,9 @@ public class EmgVehicleAdapter extends RecyclerView.Adapter<EmgVehicleAdapter.Su
     public void onBindViewHolder(SuperheroHolder holder, int position) {
         holder.emgVehicleLocation.setText(emgVehicleList.get(position).getLocation());
         holder.emgVehicleType.setText(emgVehicleList.get(position).getType());
+        holder.emgVehicleModel.setText(emgVehicleList.get(position).getModel());
+        holder.emgVehicleVin.setText(emgVehicleList.get(position).getVin());
+
     }
 
     @Override
@@ -105,9 +108,9 @@ public class EmgVehicleAdapter extends RecyclerView.Adapter<EmgVehicleAdapter.Su
     private void seeDetails(int position) {
         EmgVehicle emgVehicle = emgVehicleList.get(position);
 
-     //   Intent intent = new Intent(context, EmgVehicleDetailsView.class);
+        //   Intent intent = new Intent(context, EmgVehicleDetailsView.class);
 //        intent.putExtra("id", emgVehicle.getId());
-    //    context.startActivity(intent);
+        //    context.startActivity(intent);
     }
 
 
