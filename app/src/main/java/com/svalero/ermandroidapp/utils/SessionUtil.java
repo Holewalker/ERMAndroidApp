@@ -12,7 +12,7 @@ public class SessionUtil {
     }
 
     public void setUserId(long userId) {
-        prefs.edit().putLong("userId", userId).commit();
+        prefs.edit().putLong("userId", userId).apply();
     }
 
     public long getUserId() {
@@ -20,15 +20,13 @@ public class SessionUtil {
     }
 
     public void setUserName(String userName) {
-        prefs.edit().putString("userName", userName).commit();
+        prefs.edit().putString("userName", userName).apply();
     }
 
     public String getUserName() {
         return prefs.getString("userName", "");
     }
 }
-
-
 
 /*
 USO:

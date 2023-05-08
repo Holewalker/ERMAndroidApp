@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
 
     <Button
@@ -19,24 +19,26 @@
         app:layout_constraintTop_toBottomOf="@+id/btnNewActivity" />
 
     <Button
-        android:id="@+id/btnListPlaces"
+        android:id="@+id/listEmgServices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:onClick="listPlacesNav"
+        android:onClick="listEmgServices"
+        android:text="@string/ListEmergencyServices"
         app:layout_constraintEnd_toEndOf="@+id/btnListActivities"
         app:layout_constraintStart_toStartOf="@+id/btnListActivities"
         app:layout_constraintTop_toBottomOf="@+id/btnListActivities" />
 
     <Button
-        android:id="@+id/btnListUsers"
+        android:id="@+id/btnFavList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:onClick="listUsersNav"
-        app:layout_constraintEnd_toEndOf="@+id/btnListPlaces"
-        app:layout_constraintStart_toStartOf="@+id/btnListPlaces"
-        app:layout_constraintTop_toBottomOf="@+id/btnListPlaces" />
+        android:onClick="listFavVehicles"
+        android:text="@string/ListFavoriteVehicles"
+        app:layout_constraintEnd_toEndOf="@+id/listEmgServices"
+        app:layout_constraintStart_toStartOf="@+id/listEmgServices"
+        app:layout_constraintTop_toBottomOf="@+id/listEmgServices" />
 
 
     <Button
@@ -78,7 +80,6 @@
         app:layout_constraintBottom_toTopOf="@+id/btnLogout2"
         app:layout_constraintEnd_toEndOf="@+id/btnLogout2"
         app:layout_constraintStart_toStartOf="@+id/btnLogout2" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
